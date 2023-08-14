@@ -1,5 +1,12 @@
 name: GitHub CI
-on: [push]
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - "**/LICENSE"
+      - "**/README.md"
 
 concurrency: 
   group: ${{ github.ref }}-${{ github.workflow }}
